@@ -202,7 +202,7 @@
 
 # Whether workers can perform the hit multiple times. Enforced by the psiturk
 # server; not by mturk.
-;allow_repeats = false
+allow_repeats = true
 
 # Maximum expected time for a participant to complete the task.
 # Exclusively used in determining random assignment -- basically, how long should
