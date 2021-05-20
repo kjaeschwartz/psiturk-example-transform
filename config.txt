@@ -9,24 +9,24 @@
 # Title that will be used for the HIT when posted to mturk
 # e.g.,
 #     title = Stroop task
-;title =
+title = Stroop Task
 
 # Description that will be used for the HIT when posted to mturk
 # e.g.,
 #     description = Judge the color of a series of words.
-;description =
+description = Judge the color of a series of words.
 
 # Keywords for the HIT on mturk
 # e.g.,
 #     keywords = Perception, Psychology
-;keywords =
+keywords =Perception,Psychology
 
 # How many hours a given HIT will last on mturk before becoming unavailable
 # for new assignments
-;lifetime = 24
+lifetime = 24
 
 # Whether the HIT will be restricted to US-located mturkers
-;us_only = true
+us_only = true
 
 # Minimum approval percentage a worker must have to accept the HIT.
 # Note! Mturk defaults a worker's approval percentage to 100% until
