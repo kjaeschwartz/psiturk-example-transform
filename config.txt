@@ -80,10 +80,9 @@ ad_url_domain = arcane-citadel-39484.herokuapp.com
 [Database Parameters]
 # Participant data will be stored in this database.
 # If ON_CLOUD=1, then this defaults to env var $DATABASE_URL, if set.
-;database_url = sqlite:///participants.db
-
+database_url = postgres://fhbfskyvjmiizc:adc60bd73008ee4dfd1d7b1e5f28d76d0f4e5deb824f597d61878b3ac1909d81@ec2-54-166-167-192.compute-1.amazonaws.com:5432/dd7ps14ol59r69
 # Name of the database table where participant data will be stored
-;table_name = assignments
+table_name = turkdemo
 
 ############################# Server Parameters ################################
 [Server Parameters]
