@@ -1,12 +1,12 @@
 # this file imports custom routes into the experiment server
-from __future__ import generator_stop
+
 from flask import Blueprint, render_template, request, jsonify, Response, abort, current_app
 from jinja2 import TemplateNotFound
 from functools import wraps
 from sqlalchemy import or_
 
 from psiturk.psiturk_config import PsiturkConfig
-from psiturk.experiment_errors import ExperimentError, InvalidUsageError
+from psiturk.experiment_errors import ExperimentError, InvalidUsage
 from psiturk.user_utils import PsiTurkAuthorization, nocache
 
 # # Database setup
@@ -100,3 +100,25 @@ def compute_bonus():
         return jsonify(**resp)
     except:
         abort(404)  # again, bad to display HTML, but...
+
+
+#----------------------------------------------
+# Get participant data file and write to file
+#----------------------------------------------
+@custom_code.route('/save_data_file', methods=['POST'])
+def save_data_file():
+    # Print message to server.log for debugging
+    current_app.logger.warning("Entered /save_data_file")
+    try:
+        # Get data from POST
+        file_name = request.form['file_name']
+        file_data = request.form['file_data']
+        # Write file to disk
+        write_file = open("data/" + file_name, "w")
+        write_file.write(file_data)
+        write_file.close()
+        # Return successfully
+        response = {"save_data_file": "success"}
+        return jsonify(**response)
+    except:
+        abort(404)

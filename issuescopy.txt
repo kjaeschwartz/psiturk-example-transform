@@ -1,0 +1,35 @@
+5/16/21:Current issues 
+	1:database doesnt seem to work: 
+		After i complete the experiment the data doesnt go anywhere.I cant get anything with the download_datafiles command and nothing appears in the postgresql db.Also psiturk says
+		that download_datafiles is supposed to work.
+
+	--possible explanations
+		-this github issues page(https://github.com/NYUCCL/psiTurk/issues/375) says it might have to do with python versions and encoding. But that seems unlikely because the errors
+		I get simply say there is no data found in record, not that something went wrong with the process of retrieving data. Also it requires an extreme solution which i want to stay
+		away from.
+
+		-Maybe the db is working, But i just need to run commands against the postgresql db. I Hope thats not the case because I need that download_datafiles command to get those 
+		csv files.
+
+		-Maybe the postgresql is incompatible with the download_datafiles command. But that seems unlikely given that the documentation said that download_datafiles should work fine.
+
+		-the docs said psiturk will look for a file called .env in the psiturk app and read key=value settings as variables for the psiturk app.I could put a database url configuration
+		 in a file called .env
+		
+		-in the server log its saying no turkdemo table exists. maybe its because my stuff is being saved to an assignments table lets try editing that.
+			-nope, i did that but nothing happened. hmm maybe its because I'm running this off of github. maybe this stuff needs to be run off of git so i can interface back with
+			 the command line. the instructions do say to use git. so maybe i can branch this repo and push it to heroku master...
+
+ 
+	2:the fast-ocean branch app keeps giving me errors, even if my repositories are valid
+		-tbh its not the worst issue in the world, i can just keep playing around with my secure-wave apps, which work fine, I probably screwed something up in the process of making
+		fast-ocean
+
+	3:The experiment isn't completing. 
+		When I finish the experiment i cant go to the submit HIT page I used to get.Because of that I cant get the record in the completeed HITs section. Its like aws just gives me 
+		a link to the heroku page but the heroku page can't submit anything.
+		-hmm maybe i should check the server log
+
+5/21/21: Database still isnt working.
+	Attempt 1: Lets see if we can get the example to download datafiles so i can see where I'm going wrong.
+
